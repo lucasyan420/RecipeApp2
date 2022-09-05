@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.PetActivity">
+
+    <TextView
+        android:id="@+id/teddyBearCount_TextView_PetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="@+id/teddyBear_ImageView_PetActivity"
+        app:layout_constraintStart_toStartOf="@+id/teddyBear_ImageView_PetActivity"
+        app:layout_constraintTop_toBottomOf="@+id/happiness_ProgressBar_PetActivity" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buyButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/yellow"
+        android:onClick="buyItem"
+        android:text="Buy Reward"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/points_TextView_PetActivity"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center_vertical"
+        android:text="Reward"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/star_ImageView_PetActivity"
+        app:layout_constraintTop_toTopOf="@+id/star_ImageView_PetActivity" />
+
+    <ImageView
+        android:id="@+id/star_ImageView_PetActivity"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="45dp"
+        app:layout_constraintStart_toEndOf="@+id/petName_TextView_PetActivity"
+        app:layout_constraintTop_toTopOf="@+id/petName_TextView_PetActivity"
+        app:srcCompat="@drawable/icons8_christmas_star_48" />
+
+    <ImageView
+        android:id="@+id/diamondStar_ImageView_PetActivity"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/diamond_ImageView_PetActivity"
+        app:layout_constraintTop_toBottomOf="@+id/diamond_ImageView_PetActivity"
+        app:srcCompat="@drawable/icons8_christmas_star_48" />
+
+    <ImageView
+        android:id="@+id/snackStar_ImageView_PetActivity"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/snack_ImageView_PetActivity"
+        app:layout_constraintTop_toBottomOf="@+id/snack_ImageView_PetActivity"
+        app:srcCompat="@drawable/icons8_christmas_star_48" />
+
+    <ImageView
+        android:id="@+id/teddyBearStar_ImageView_PetActivity"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/teddyBear_ImageView_PetActivity"
+        app:layout_constraintTop_toBottomOf="@+id/teddyBear_ImageView_PetActivity"
+        app:srcCompat="@drawable/icons8_christmas_star_48" />
+
+    <TextView
+        android:id="@+id/petName_TextView_PetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Pet Name"
+        android:textColor="@color/cyan"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/petActivity_TextView_PetActivity"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Your Pet"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petActivity_TextView_PetActivity"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/goBack_ImageView_PetActivity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:onClick="backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow__1_"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/petImage_ImageView_PetActivity"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petName_TextView_PetActivity"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/snack_ImageView_PetActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:onClick="selectedAction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snackCount_TextView_PetActivity"
+        app:srcCompat="@drawable/snack"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/teddyBear_ImageView_PetActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="5dp"
+        android:onClick="selectedAction"
+        app:layout_constraintStart_toEndOf="@+id/snack_ImageView_PetActivity"
+        app:layout_constraintTop_toBottomOf="@+id/teddyBearCount_TextView_PetActivity"
+        app:srcCompat="@drawable/teddy_bear"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/diamond_ImageView_PetActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="60dp"
+        android:onClick="selectedAction"
+        app:layout_constraintEnd_toStartOf="@+id/snack_ImageView_PetActivity"
+        app:layout_constraintTop_toBottomOf="@+id/diamondCount_TextView_PetActivity"
+        app:srcCompat="@drawable/diamond"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ProgressBar
+        android:id="@+id/wealth_ProgressBar_PetActivity"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petImage_ImageView_PetActivity" />
+
+    <ProgressBar
+        android:id="@+id/hunger_ProgressBar_PetActivity"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wealth_ProgressBar_PetActivity" />
+
+    <ProgressBar
+        android:id="@+id/happiness_ProgressBar_PetActivity"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hunger_ProgressBar_PetActivity" />
+
+    <TextView
+        android:id="@+id/diamondCost_TextView_PetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        android:text="100"
+        app:layout_constraintEnd_toStartOf="@+id/diamondStar_ImageView_PetActivity"
+        app:layout_constraintTop_toTopOf="@+id/diamondStar_ImageView_PetActivity" />
+
+    <TextView
+        android:id="@+id/diamondCount_TextView_PetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:text="1"
+        app:layout_constraintEnd_toEndOf="@+id/diamond_ImageView_PetActivity"
+        app:layout_constraintStart_toStartOf="@+id/diamond_ImageView_PetActivity"
+        app:layout_constraintTop_toBottomOf="@+id/happiness_ProgressBar_PetActivity" />
+
+    <TextView
+        android:id="@+id/snackCount_TextView_PetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/happiness_ProgressBar_PetActivity" />
+
+    <TextView
+        android:id="@+id/teddyBearCost_TextView_PetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        android:text="1000"
+        app:layout_constraintEnd_toStartOf="@+id/teddyBearStar_ImageView_PetActivity"
+        app:layout_constraintTop_toTopOf="@+id/teddyBearStar_ImageView_PetActivity" />
+
+    <TextView
+        android:id="@+id/snackCost_TextView_PetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        android:text="500"
+        app:layout_constraintEnd_toStartOf="@+id/snackStar_ImageView_PetActivity"
+        app:layout_constraintTop_toTopOf="@+id/snackStar_ImageView_PetActivity" />
+</androidx.constraintlayout.widget.ConstraintLayout>

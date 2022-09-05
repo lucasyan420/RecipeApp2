@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.AddDefaultRecipeActivity">
+
+    <Button
+        android:id="@+id/addRecipes_Button_RecipesActivity2"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="addRecipe"
+        android:text="@string/add_recipes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/addRecipes_TextView_AddDefaultRecipeActivity"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/add_recipes"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addRecipes_TextView_AddDefaultRecipeActivity"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/goBack_ImageView_AddDefaultRecipeActivity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:onClick="backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow__1_"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/recipeName_TextView_AddDefaultRecipeActivity"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+    <ImageView
+        android:id="@+id/recipePhoto_ImageView_AddDefaultRecipeActivity"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeName_TextView_AddDefaultRecipeActivity"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/recipeTime_TextInputLayout_AddDefaultRecipeActivity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/cyan"
+        app:boxStrokeColor="@color/cyan"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/cyan"
+        app:hintTextColor="@color/cyan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipePhoto_ImageView_AddDefaultRecipeActivity"
+        app:startIconDrawable="@drawable/icons8_clock_40"
+        app:startIconTint="@color/dark_cyan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recipeTime_TextInputEditText_AddDefaultRecipeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recipe Time"
+            android:textColor="@color/cyan"
+            android:textColorHint="#757575" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/recipePoints_TextInputLayout_AddDefaultRecipeActivity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/cyan"
+        app:boxStrokeColor="@color/cyan"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/cyan"
+        app:hintTextColor="@color/cyan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeTime_TextInputLayout_AddDefaultRecipeActivity"
+        app:startIconDrawable="@drawable/icons8_clock_40"
+        app:startIconTint="@color/dark_cyan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recipePoints_TextInputEditText_AddDefaultRecipeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recipe Points"
+            android:textColor="@color/cyan"
+            android:textColorHint="#757575" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/recipeIngredients_TextInputLayout_AddDefaultRecipeActivity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/cyan"
+        app:boxStrokeColor="@color/cyan"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/cyan"
+        app:hintTextColor="@color/cyan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipePoints_TextInputLayout_AddDefaultRecipeActivity"
+        app:startIconDrawable="@drawable/icons8_clock_40"
+        app:startIconTint="@color/dark_cyan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recipeIngredients_TextInputEditText_AddDefaultRecipeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recipe Ingredients"
+            android:textColor="@color/cyan"
+            android:textColorHint="#757575" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/recipeSteps_TextInputLayout_AddDefaultRecipeActivity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/cyan"
+        app:boxStrokeColor="@color/cyan"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/cyan"
+        app:hintTextColor="@color/cyan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeIngredients_TextInputLayout_AddDefaultRecipeActivity"
+        app:startIconDrawable="@drawable/icons8_clock_40"
+        app:startIconTint="@color/dark_cyan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recipeSteps_TextInputEditText_AddDefaultRecipeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recipe Steps"
+            android:textColor="@color/cyan"
+            android:textColorHint="#757575" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51751228786",
+    "project_id": "recipeapp-53903",
+    "storage_bucket": "recipeapp-53903.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51751228786:android:074a09e5c0bf4275a9f9eb",
+        "android_client_info": {
+          "package_name": "com.ibm.recipesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51751228786-gj9rt1r1ofm375fc7l4oicr9hanppqjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4JknVJKqUPuguaubu5Whn8j8mu4FxCaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51751228786-gj9rt1r1ofm375fc7l4oicr9hanppqjo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

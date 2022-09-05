@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RecipesApp</string>
+    <string name="recipes">Recipes</string>
+    <string name="log_out">Log Out</string>
+    <string name="add_recipes">Add Recipes</string>
+    <string name="default_recipes">Default Recipes</string>
+</resources>

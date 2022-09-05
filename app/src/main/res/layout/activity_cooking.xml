@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.CookingActivity">
+
+    <Button
+        android:id="@+id/finish_Button_TimerActivity"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="updateTotalPoints"
+        android:text="Cooked!!!"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/points_TextView_CookingActivity"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center_vertical"
+        android:text="Reward"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/star_ImageView_CookingActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/star_ImageView_CookingActivity" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cookingPage_TextView_CookingActivity"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/cookingPage_TextView_CookingActivity"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Cooking Page"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/goBack_ImageView_CookingActivity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:onClick="backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow__1_"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/recipePhoto_ImageView_CookingActivity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/star_ImageView_CookingActivity"
+        app:layout_constraintTop_toBottomOf="@+id/star_ImageView_CookingActivity"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/star_ImageView_CookingActivity"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/points_TextView_CookingActivity"
+        app:layout_constraintTop_toTopOf="@+id/cookingPage_TextView_CookingActivity"
+        app:srcCompat="@drawable/icons8_christmas_star_48" />
+
+    <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+        android:id="@+id/progressBar_MaterialProgressBar_CookingActivity"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/play_FloatingActionButton_CookingActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar_MaterialProgressBar_CookingActivity"
+        app:srcCompat="@drawable/ic_play_button"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pause_FloatingActionButton_CookingActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="45dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toStartOf="@+id/play_FloatingActionButton_CookingActivity"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar_MaterialProgressBar_CookingActivity"
+        app:srcCompat="@drawable/icons8_pause_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/stop_FloatingActionButton_CookingActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@+id/play_FloatingActionButton_CookingActivity"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar_MaterialProgressBar_CookingActivity"
+        app:srcCompat="@drawable/icons8_stop_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/timeDisplay_TextView_CookingActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar_MaterialProgressBar_CookingActivity"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar_MaterialProgressBar_CookingActivity"
+        app:layout_constraintStart_toStartOf="@+id/progressBar_MaterialProgressBar_CookingActivity"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_MaterialProgressBar_CookingActivity" />
+
+    <TextView
+        android:id="@+id/ingredientsLabel_TextView_CookingActivity"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:gravity="right"
+        android:text="Ingredients:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_FloatingActionButton_CookingActivity" />
+
+    <TextView
+        android:id="@+id/stepsLabel_TextView_CookingActivity"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:gravity="right"
+        android:text="Steps:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_ScrollView_CookingActivity" />
+
+    <ScrollView
+        android:id="@+id/ingredients_ScrollView_CookingActivity"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:fillViewport="true"
+        app:layout_constraintStart_toEndOf="@+id/ingredientsLabel_TextView_CookingActivity"
+        app:layout_constraintTop_toBottomOf="@+id/play_FloatingActionButton_CookingActivity">
+
+        <LinearLayout
+            android:id="@+id/ingredients_LinearLayout_CookingActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/ingredients_ListView_CookingActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/steps_ScrollView_CookingActivity"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:fillViewport="true"
+        app:layout_constraintStart_toEndOf="@+id/stepsLabel_TextView_CookingActivity"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_ScrollView_CookingActivity">
+
+        <LinearLayout
+            android:id="@+id/steps_LinearLayout_CookingActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/steps_ListView_CookingActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
