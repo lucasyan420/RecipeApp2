@@ -31,6 +31,9 @@ import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 // CookingActivity
 
+/**
+ * CookingActivity: This class allows users to enter the cooking page where the recipes information is displayed, users can use the timer, and receive rewards once recipe is cooked
+ */
 public class CookingActivity extends AppCompatActivity {
     User user;
     String userID;
@@ -121,6 +124,9 @@ public class CookingActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method collects the recipe's ingredients and displays it
+     */
     public void updateIngredientsList()
     {
         ArrayList<String> ingredientsList = (ArrayList<String>) getIntent().getSerializableExtra("Recipe Ingredients");
@@ -128,6 +134,9 @@ public class CookingActivity extends AppCompatActivity {
         recipeIngredientsListView.setAdapter(adapter);
     }
 
+    /**
+     * This method collects the recipe's steps and displays it
+     */
     public void updateStepsList()
     {
         ArrayList<String> stepsList = (ArrayList<String>) getIntent().getSerializableExtra("Recipe Steps");
@@ -135,11 +144,17 @@ public class CookingActivity extends AppCompatActivity {
         recipeStepsListView.setAdapter(adapter);
     }
 
+    /**
+     * This method sets the three timer states
+     */
     public enum TimerState
     {
         Stopped, Paused, Running
     }
 
+    /**
+     * This method allows the timer to resume
+     */
     @Override
     protected void onResume()
     {
@@ -147,6 +162,9 @@ public class CookingActivity extends AppCompatActivity {
         initialiseTimer();
     }
 
+    /**
+     * This method allows the timer to pause
+     */
     @Override
     protected void onPause()
     {
@@ -162,6 +180,9 @@ public class CookingActivity extends AppCompatActivity {
         PrefUtil.setTimerState(timerState, this);
     }
 
+    /**
+     * This method sets up the initial timer state
+     */
     private void initialiseTimer()
     {
         timerState = PrefUtil.getTimerState(this);
@@ -186,6 +207,9 @@ public class CookingActivity extends AppCompatActivity {
         updateCountdownUI();
     }
 
+    /**
+     * This stops the timer when timer is finished
+     */
     private void onTimerFinished()
     {
         timerState = TimerState.Stopped;
@@ -197,6 +221,9 @@ public class CookingActivity extends AppCompatActivity {
         updateCountdownUI();
     }
 
+    /**
+     * This method starts the tiemr
+     */
     private void startTimer()
     {
         timerState = TimerState.Running;
@@ -215,6 +242,9 @@ public class CookingActivity extends AppCompatActivity {
         }.start();
     }
 
+    /**
+     * This method sets the new timer length
+     */
     private void setNewTimerLength()
     {
         String time = "0";
@@ -229,12 +259,18 @@ public class CookingActivity extends AppCompatActivity {
         progressCountdown.setMax(timerLengthSeconds.intValue());
     }
 
+    /**
+     * This method sets the old timer length
+     */
     private void setPreviousTimerLength()
     {
         timerLengthSeconds = PrefUtil.getPreviousTimerLengthSeconds(this);
         progressCountdown.setMax(timerLengthSeconds.intValue());
     }
 
+    /**
+     * This method sets up the animation of the timer
+     */
     private void updateCountdownUI()
     {
         int minutesUntilFinished = secondsRemaining.intValue() / 60;
@@ -245,6 +281,9 @@ public class CookingActivity extends AppCompatActivity {
         progressCountdown.setProgress((timerLengthSeconds.intValue() - secondsRemaining.intValue()));
     }
 
+    /**
+     * This method enables timer buttons to be clicked
+     */
     private void updateButtons()
     {
         switch (timerState)
@@ -269,6 +308,10 @@ public class CookingActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method updates the user's points once recipe is cooked
+     * @param view
+     */
     public void updateTotalPoints(View view)
     {
         Toast.makeText(this, name + " recipe cooked, points have been added", Toast.LENGTH_LONG).show();
@@ -298,6 +341,10 @@ public class CookingActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * This method turns the page to the Recipes Activity
+     * @param view
+     */
     public void backButton(View view){
         Intent goBack = new Intent(this, RecipesActivity.class);
         goBack.putExtra("user", user);

@@ -15,8 +15,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.ibm.recipesapp.R;
 import com.ibm.recipesapp.User.User;
 
-// SignUpActivity
-
+/**
+ * SignUpActivity: This class allows users to sign up with a new account
+ */
 public class SignUpActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
@@ -36,6 +37,10 @@ public class SignUpActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.password_TextInputEditText_SignUpActivity);
     }
 
+    /**
+     * This method allows users to create an account with a valid name, email and password, and uploads the information to the database
+     * @param view
+     */
     public void signUp(View view){
         String name = nameInput.getText().toString();
         String email = emailInput.getText().toString();
@@ -84,6 +89,10 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method turns the page to the Login Activity
+     * @param v
+     */
     public void goSignInActivity(View v)
     {
         Intent intent = new Intent(this, LoginActivity.class);
@@ -91,6 +100,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * This method tursn the page to PetCreationActivity when account is created
+     * @param user
+     */
     public void goPetCreationActivity(User user)
     {
         Intent intent = new Intent(this, PetCreationActivity.class);

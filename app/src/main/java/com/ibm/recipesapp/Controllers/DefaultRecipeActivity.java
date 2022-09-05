@@ -19,7 +19,9 @@ import com.ibm.recipesapp.recipesRecyclerAdapter;
 
 import java.util.ArrayList;
 
-// DefaultRecipeActivity
+/**
+ * DefaultRecipeActivity: This class shows the list of default common recipes
+ */
 public class DefaultRecipeActivity extends AppCompatActivity {
     private ArrayList<Recipe> recipeList;
     private RecyclerView recyclerView;
@@ -58,6 +60,9 @@ public class DefaultRecipeActivity extends AppCompatActivity {
         setAdapter();
     }
 
+    /**
+     * This method sets the adapter for recycler view
+     */
     private void setAdapter(){
         setOnClickListener();
 
@@ -69,6 +74,9 @@ public class DefaultRecipeActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * This method listens to if the recycler view is clicked on and collects information about the chosen recipe
+     */
     private void setOnClickListener(){
         listener = (view, position) ->
         {
@@ -81,6 +89,9 @@ public class DefaultRecipeActivity extends AppCompatActivity {
         };
     }
 
+    /**
+     * This method sets the information to be displayed in the list
+     */
     private void setRecipeInfo(){
         recipeList.add(new Recipe(null, "Tacos", 0, 0, tacosImageURL, null, null));
         recipeList.add(new Recipe(null, "Sushi", 0, 0, sushiImageURL, null, null));
@@ -103,12 +114,20 @@ public class DefaultRecipeActivity extends AppCompatActivity {
         recipeList.add(new Recipe(null, "Barbeque", 0, 0, barbequeImageURL, null, null));
     }
 
+    /**
+     * On button onclicked, this method turns the page to Add Recipe Activity
+     * @param view
+     */
     public void goToAddRecipeActivity(View view){
         Intent goToAddRecipeActivity = new Intent(this, AddRecipeActivity.class);
         goToAddRecipeActivity.putExtra("user", user);
         startActivity(goToAddRecipeActivity);
     }
 
+    /**
+     * On button onclicked, this method turns the page back to Recipes Activity
+     * @param view
+     */
     public void backButton(View view){
         Intent goBack = new Intent(this, RecipesActivity.class);
         goBack.putExtra("user", user);

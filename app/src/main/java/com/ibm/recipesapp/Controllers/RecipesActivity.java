@@ -26,8 +26,9 @@ import com.ibm.recipesapp.recipesRecyclerAdapter;
 import java.util.ArrayList;
 
 
-// RecipesActivity
-
+/**
+ * RecipesActivity: This class is the main page of the app, and shows list of created recipes by user
+ */
 public class RecipesActivity extends AppCompatActivity {
     private ArrayList<Recipe> recipeList;
     private RecyclerView recyclerView;
@@ -70,6 +71,9 @@ public class RecipesActivity extends AppCompatActivity {
         getUser();
     }
 
+    /**
+     * This method collects the user's information from the database
+     */
     private void getUser() {
         try
         {
@@ -106,6 +110,9 @@ public class RecipesActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method shows a special text and image if no recipes have been created yet
+     */
     public void showNoRecipes() {
         if (hasRecipes == false)
         {
@@ -116,6 +123,9 @@ public class RecipesActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method sets the adapter of the recyclerView
+     */
     private void setAdapter(){
         setOnClickListener();
         adapter = new recipesRecyclerAdapter(recipeList, listener);
@@ -125,6 +135,9 @@ public class RecipesActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * This method listens to user clicks on the list and collects information from the chosen recipe
+     */
     private void setOnClickListener(){
         listener = (v, position) ->
         {
@@ -144,6 +157,10 @@ public class RecipesActivity extends AppCompatActivity {
         };
     }
 
+    /**
+     * This image changes the pet icon image to the chosen pet image
+     * @param user
+     */
     private void setPetImage(User user) {
         switch(user.getUserSelectedPet())
         {
@@ -168,24 +185,40 @@ public class RecipesActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method turns the page to PetActivity
+     * @param view
+     */
     public void goToPetActivity(View view){
         Intent goToPetActivity = new Intent(this, PetActivity.class);
         goToPetActivity.putExtra("user", user);
         startActivity(goToPetActivity);
     }
 
+    /**
+     * This method turns the page to Default Recipe Activity
+     * @param view
+     */
     public void goToDefaultRecipeActivity(View view){
         Intent goToDefaultRecipeActivity = new Intent(this, DefaultRecipeActivity.class);
         goToDefaultRecipeActivity.putExtra("user", user);
         startActivity(goToDefaultRecipeActivity);
     }
 
+    /**
+     * This method turns the page to Mystery Recipe Activity
+     * @param view
+     */
     public void goToMysteryRecipeActivity(View view){
         Intent goToMysteryRecipeActivity = new Intent(this, MysteryRecipeActivity.class);
         goToMysteryRecipeActivity.putExtra("user", user);
         startActivity(goToMysteryRecipeActivity);
     }
 
+    /**
+     * This method turns the page to LoginActivity
+     * @param view
+     */
     public void signOut(View view){
         mAuth.signOut();
         Intent intent = new Intent(this, LoginActivity.class);

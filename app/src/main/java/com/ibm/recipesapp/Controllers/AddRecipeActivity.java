@@ -29,8 +29,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.UUID;
 
-// AddRecipeActivity
-
+/**
+ * AddRecipeActivity: This class allows users to add customisable recipes to their list of made recipes
+ */
 public class AddRecipeActivity extends AppCompatActivity {
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     private FirebaseAuth mauth = FirebaseAuth.getInstance();
@@ -81,6 +82,9 @@ public class AddRecipeActivity extends AppCompatActivity {
             }
     );
 
+    /**
+     * This method allows users to choose a picture from their phone
+     */
     private void choosePicture(){
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -88,6 +92,12 @@ public class AddRecipeActivity extends AppCompatActivity {
         someActivityResultLauncher.launch(intent);
     }
 
+    /**
+     * This method loads the chosen picture onto the screen
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -98,6 +108,10 @@ public class AddRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method checks that the user's inputs are valid inputs
+     * @return
+     */
     public boolean formValid(){
         nameString = recipeName.getText().toString();
         timeString = recipeTime.getText().toString();
@@ -118,6 +132,10 @@ public class AddRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method collects user's inputs, creates a recipe object and uploads it to the database
+     * @param view
+     */
     public void addRecipe(View view)
     {
         if(formValid())
@@ -178,6 +196,9 @@ public class AddRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method clears the page
+     */
     public void clearPage()
     {
         recipeName.setText(null);
@@ -187,6 +208,9 @@ public class AddRecipeActivity extends AppCompatActivity {
         back();
     }
 
+    /**
+     * This method turns the page to the Default Recipe Activity
+     */
     public void back()
     {
         Intent goBackIntent = new Intent(this, DefaultRecipeActivity.class);
@@ -194,6 +218,10 @@ public class AddRecipeActivity extends AppCompatActivity {
         startActivity(goBackIntent);
     }
 
+    /**
+     * On button onclicked, this method turns the page to the Default Recipe Activity
+     * @param view
+     */
     public void backButton(View view){
         Intent goBack = new Intent(this, DefaultRecipeActivity.class);
         goBack.putExtra("user", user);

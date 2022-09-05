@@ -23,8 +23,9 @@ import com.ibm.recipesapp.User.User;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-// PetActivity
+/**
+ * PetActivity: This class allows users to gift rewards to their pet
+ */
 public class PetActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
@@ -81,6 +82,10 @@ public class PetActivity extends AppCompatActivity {
         petPressed();
     }
 
+    /**
+     * This method displays the user's chosen pet icon
+     * @param user
+     */
     private void setPetImage(User user) {
         switch(user.getUserSelectedPet())
         {
@@ -105,6 +110,10 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method allows for rewards to be enlarged when clicked on
+     * @param view
+     */
     public void selectedAction(View view){
         switch(view.getId()){
             case R.id.diamond_ImageView_PetActivity:
@@ -130,6 +139,9 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method restores the reward image size when unclicked
+     */
     public void restoreImage(){
         switch(currentAction)
         {
@@ -148,6 +160,10 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method enlarges the image
+     * @param view
+     */
     public void enlargeImage(View view)
     {
         view.requestLayout();
@@ -155,6 +171,10 @@ public class PetActivity extends AppCompatActivity {
         view.getLayoutParams().width = 200;
     }
 
+    /**
+     * This method reduces the image size
+     * @param view
+     */
     public void reduceImage(View view)
     {
         view.requestLayout();
@@ -162,6 +182,9 @@ public class PetActivity extends AppCompatActivity {
         view.getLayoutParams().width = 150;
     }
 
+    /**
+     * This method enlarges the pet image when clicked on
+     */
     @SuppressLint("ClickableViewAccessibility")
     public void petPressed()
     {
@@ -189,6 +212,10 @@ public class PetActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method organises the buying of rewards
+     * @param view
+     */
     public void buyItem(View view)
     {
         switch(currentAction)
@@ -210,6 +237,9 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method updates the number of rewards
+     */
     private void petClicked() {
         switch(currentAction)
         {
@@ -230,6 +260,9 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method updates the user's pet's information on the database
+     */
     public void updateUser()
     {
         firestore.collection("users").document(mAuth.getCurrentUser().getUid()).set(user).addOnCompleteListener(task -> {
@@ -237,6 +270,9 @@ public class PetActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method updates the teddy bear quantity on the page
+     */
     public void updateUserTeddyBear(){
         if(pet.getPetTeddyBear().getTeddyBearAmount() >= 1)
         {
@@ -253,6 +289,9 @@ public class PetActivity extends AppCompatActivity {
         updateUser();
     }
 
+    /**
+     * This method updates the diamond quantity on the page
+     */
     public void updateUserDiamond(){
         if(pet.getPetDiamond().getDiamondAmount() >= 1)
         {
@@ -269,6 +308,9 @@ public class PetActivity extends AppCompatActivity {
         updateUser();
     }
 
+    /**
+     * This method updates the snack quantity on the page
+     */
     public void updateUserSnack(){
         if(pet.getPetSnack().getSnackAmount() >= 1)
         {
@@ -285,6 +327,9 @@ public class PetActivity extends AppCompatActivity {
         updateUser();
     }
 
+    /**
+     * This method allows the user to buy teddy bears
+     */
     public void buyTeddyBears()
     {
         if(pet.getPetPoints() - pet.getPetTeddyBear().getTeddyBearCost() >= 0)
@@ -302,6 +347,9 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method allows the user to buy snacks
+     */
     public void buySnacks()
     {
         if(pet.getPetPoints() - pet.getPetSnack().getSnackCost() >= 0)
@@ -319,6 +367,9 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method allows the user to buy diamonds
+     */
     public void buyDiamonds()
     {
         if(pet.getPetPoints() - pet.getPetDiamond().getDiamondCost() >= 0)
@@ -336,6 +387,9 @@ public class PetActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method sets up the progress bar for the pet's wellbeing
+     */
     private void progressBar() {
         final Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
@@ -357,6 +411,9 @@ public class PetActivity extends AppCompatActivity {
         timer.schedule(timerTask, 0, 20);
     }
 
+    /**
+     * This method decreases the pet's wellbeing progress bar
+     */
     public void decreaseProgressBars()
     {
         final Timer timer = new Timer();
@@ -384,6 +441,9 @@ public class PetActivity extends AppCompatActivity {
         timer.schedule(timerTask, 0, 10000);
     }
 
+    /**
+     * This method turns the page back to Recipes Activity
+     */
     public void backButton(View view)
     {
         Intent backButton = new Intent(this, RecipesActivity.class);

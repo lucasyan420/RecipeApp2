@@ -15,8 +15,9 @@ import com.ibm.recipesapp.R;
 import com.ibm.recipesapp.Rewards.Pet;
 import com.ibm.recipesapp.User.User;
 
-// PetCreationActivity
-
+/**
+ * PetCreationActivity: This class allows the user to set their pet icon and name on account creation
+ */
 public class PetCreationActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
@@ -56,7 +57,11 @@ public class PetCreationActivity extends AppCompatActivity {
         pigImageView = findViewById(R.id.pig_ImageView_PetCreationActivity);
         catImageView = findViewById(R.id.cat_ImageView_PetCreationActivity);
     }
-    
+
+    /**
+     * This method sets the icon sizes and options when clicked on
+     * @param view
+     */
     public void selectedPet(View view){
         switch (view.getId()){
             case R.id.parrot_ImageView_PetCreationActivity:
@@ -97,12 +102,20 @@ public class PetCreationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method enlarges pet images
+     * @param view
+     */
     private void enlargeImage(View view) {
         view.requestLayout();
         view.getLayoutParams().height = 500;
         view.getLayoutParams().width = 500;
     }
 
+    /**
+     * This method reduce pet image sizes
+     * @param view
+     */
     public void reduceImage(View view)
     {
         view.requestLayout();
@@ -110,6 +123,9 @@ public class PetCreationActivity extends AppCompatActivity {
         view.getLayoutParams().width = 300;
     }
 
+    /**
+     * This method restores the size of different pet images
+     */
     public void restoreImage()
     {
         switch (selectedPet)
@@ -137,6 +153,10 @@ public class PetCreationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method allows users to add a name for their pet and updates the database with that information
+     * @param view
+     */
     public void changePetName(View view)
     {
         try{
@@ -166,6 +186,9 @@ public class PetCreationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method turns the page to Recipes Activity
+     */
     private void goTaskActivity() {
         Intent intent = new Intent(this, RecipesActivity.class);
         intent.putExtra("user", user);

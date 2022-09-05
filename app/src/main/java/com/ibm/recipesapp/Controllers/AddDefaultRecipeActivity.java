@@ -21,8 +21,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.UUID;
 
-// AddDefaultRecipeActivity
-
+/**
+ * AddDefaultRecipeActivity: This class allows users to create default common recipes to their list of made recipes
+ */
 public class AddDefaultRecipeActivity extends AppCompatActivity {
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 
@@ -70,6 +71,10 @@ public class AddDefaultRecipeActivity extends AppCompatActivity {
         Glide.with(recipePhoto.getContext()).load(imageURL).centerCrop().into(recipePhoto);
     }
 
+    /**
+     * On button clicked, this method collects users inputs, creates a recipe object and adds it to the database
+     * @param view
+     */
     public void addRecipe(View view)
     {
         try{
@@ -98,6 +103,9 @@ public class AddDefaultRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method clears the page once a recipe has been created
+     */
     public void clearPage()
     {
         recipeTime.setText(null);
@@ -108,12 +116,19 @@ public class AddDefaultRecipeActivity extends AppCompatActivity {
         back();
     }
 
+    /**
+     * This method causes the page to change back to the Default Recipe Activity
+     */
     public void back(){
         Intent goBack = new Intent(this, DefaultRecipeActivity.class);
         goBack.putExtra("user", user);
         startActivity(goBack);
     }
 
+    /**
+     * When button is onclicked, this method turns the page back to Default Recipe Activity
+     * @param view
+     */
     public void backButton(View view){
         Intent goBack = new Intent(this, DefaultRecipeActivity.class);
         goBack.putExtra("user", user);

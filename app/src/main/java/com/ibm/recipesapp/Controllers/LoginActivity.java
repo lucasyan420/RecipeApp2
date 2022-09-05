@@ -15,8 +15,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.ibm.recipesapp.R;
 
-
-// LoginActivity
+/**
+ * LoginActivity: This class allows users to login with email and password
+ */
 public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
@@ -32,7 +33,10 @@ public class LoginActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.email_TextInputEditText_LoginActivity);
         passwordInput = findViewById(R.id.password_TextInputEditText_LoginActivity);
     }
-    
+
+    /**
+     * This method allows users to automatically login if previously logged in
+     */
     public void onStart(){
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -44,6 +48,10 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method collects user's inputs for email and password and if matching an existing user, allows user to login
+     * @param v
+     */
     public void logIn(View v)
     {
         String email = emailInput.getText().toString();
@@ -83,23 +91,21 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * On button onclicked, this method turns the page to Sign Up Activity
+     * @param view
+     */
     public void goToSignUpActivity(View view)
     {
         Intent goToSignUpActivity = new Intent(this, SignUpActivity.class);
         startActivity(goToSignUpActivity);
     }
 
+    /**
+     * On successful login, this method turns the page to Recipes Activity
+     */
     private void goTaskActivity() {
         Intent goToTasksActivity = new Intent(this, RecipesActivity.class);
         startActivity(goToTasksActivity);
     }
-
-//    public void Test(){
-//        User user1 = new User("Bob");
-//        User user2 = new User("Sara");
-//        User user3 = new User("Harry");
-//        firestore.collection("test").document("test1").set(user1);
-//        firestore.collection("test").document("test2").set(user2);
-//        firestore.collection("test").document("practice").set(user3);
-//    }
 }

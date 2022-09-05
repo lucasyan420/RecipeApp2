@@ -23,7 +23,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-// MysteryRecipeActivity
+/**
+ * MysteryRecipeActivity: This class recommends users a recipe after they complete a quiz and the algorithm takes their preferences into account
+ */
 public class MysteryRecipeActivity extends AppCompatActivity {
     User user;
     TextView currentTime;
@@ -145,6 +147,10 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         System.out.println("Current time period: " + currentTimePeriod);
     }
 
+    /**
+     * This method collects the current time period of the user and sets a meal time state
+     * @param time
+     */
     public void timePeriod(String time)
     {
         currentHour = Integer.parseInt(time.substring(0, 2));
@@ -165,6 +171,10 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method collects user's "no" input for an image
+     * @param view
+     */
     public void noImage(View view)
     {
         if(count < 30)
@@ -181,6 +191,10 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method collects user's "yes" input for an image. For every user's "yes", certain number of points are added towards user's preference for different cuisines
+     * @param view
+     */
     public void yesImage(View view)
     {
         if(count < 30)
@@ -233,6 +247,9 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method finds the user's favourite cuisine based on "yes" points
+     */
     public void findFavouriteCuisine()
     {
         int[] allNumbers = {ESAPoints, SAMPoints, EPoints, LAPoints, APoints};
@@ -261,6 +278,9 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         System.out.println(favouriteCuisine);
     }
 
+    /**
+     * This method chooses a random recipe from the correct time state and cuisine to recommend
+     */
     public void findMysteryRecipe()
     {
         if(favouriteCuisine == "ESA" && noCount < 30)
@@ -380,6 +400,10 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method shows the user the mystery recipe, name and image
+     * @param view
+     */
     public void discoverMysteryRecipe(View view)
     {
         yesImageView.setVisibility(View.INVISIBLE);
@@ -424,6 +448,9 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method shuffles all the recipes shown to user
+     */
     public void shuffleRecipeImages()
     {
         Random generator = new Random();
@@ -437,6 +464,10 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method turns the page back to Recipes Activity
+     * @param view
+     */
     public void backButton(View view)
     {
         Intent backButton = new Intent(this, RecipesActivity.class);
