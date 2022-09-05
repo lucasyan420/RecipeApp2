@@ -2,8 +2,9 @@ package com.ibm.recipesapp.Rewards;
 
 import java.io.Serializable;
 
-//Snack
-
+/**
+ * Snack: This class sets up the snack object
+ */
 public class Snack implements Serializable {
     private String snackName;
     private int snackAmount;

@@ -2,7 +2,9 @@ package com.ibm.recipesapp.Rewards;
 
 import java.io.Serializable;
 
-//TeddyBear
+/**
+ * Teddy Bear: This class sets up the teddy bear object
+ */
 public class TeddyBear implements Serializable {
     private String teddyBearName;
     private int teddyBearAmount;

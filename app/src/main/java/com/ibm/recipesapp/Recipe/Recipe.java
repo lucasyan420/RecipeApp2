@@ -3,8 +3,9 @@ package com.ibm.recipesapp.Recipe;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-// Recipe
-
+/**
+ * Recipe: This class sets up the recipe object
+ */
 public class Recipe implements Serializable {
     String recipeID;
     String recipeName;

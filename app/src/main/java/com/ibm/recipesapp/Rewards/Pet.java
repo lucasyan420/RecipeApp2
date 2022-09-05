@@ -2,8 +2,9 @@ package com.ibm.recipesapp.Rewards;
 
 import java.io.Serializable;
 
-//Pet
-
+/**
+ * Pet: This class sets up the pet object
+ */
 public class Pet implements Serializable {
     String petName;
     String petID;

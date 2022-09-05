@@ -7,7 +7,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
-//User
+/**
+ * User: This class sets up the user object
+ */
 public class User implements Serializable {
     String userID;
     String userName;

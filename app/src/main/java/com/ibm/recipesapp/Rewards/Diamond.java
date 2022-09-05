@@ -2,8 +2,9 @@ package com.ibm.recipesapp.Rewards;
 
 import java.io.Serializable;
 
-// Diamond
-
+/**
+ * Diamond: This class sets up the diamond object
+ */
 public class Diamond implements Serializable {
     private String diamondName;
     private int diamondAmount;

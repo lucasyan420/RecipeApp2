@@ -6,8 +6,9 @@ import android.preference.PreferenceManager;
 
 import com.ibm.recipesapp.Controllers.CookingActivity;
 
-//PrefUtil
-
+/**
+ * Pref Util: This class helps set up the cooking timer
+ */
 public class PrefUtil
 {
     private static final String PREVIOUS_TIMER_LENGTH_SECONDS_ID = "com.ibm.recipesapp.previous_timer_length";
